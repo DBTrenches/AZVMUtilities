@@ -91,7 +91,7 @@ Start the VM and initialize Data Disk.
 
 ```powershell
 Select-AZSubscription -Subscription $Subscription
-$StartStatus=Start-AZVM -ResourceGroupName $ResourceGroupName -Name $vmName -Force
+$StartStatus=Start-AZVM -ResourceGroupName $ResourceGroupName -Name $vmName
 
 If ($StartStatus.Status -eq "Succeeded"){
      Invoke-AzureRmVMRunCommand `
