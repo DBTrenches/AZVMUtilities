@@ -94,7 +94,7 @@ Select-AZSubscription -Subscription $Subscription
 $StartStatus=Start-AZVM -ResourceGroupName $ResourceGroupName -Name $vmName
 
 If ($StartStatus.Status -eq "Succeeded"){
-     Invoke-AzureRmVMRunCommand `
+     Invoke-AzVMRunCommand `
     -VMName $vmName `
     -ResourceGroupName $ResourceGroupName `
     -CommandId 'RunPowerShellScript' `
