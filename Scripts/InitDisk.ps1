@@ -9,7 +9,7 @@
         $disk | 
         Initialize-Disk -PartitionStyle MBR -PassThru -confirm:$false |
         New-Partition -UseMaximumSize -DriveLetter $driveLetter |
-        Format-Volume -FileSystem NTFS -NewFileSystemLabel $labels[$count] -Confirm:$false -Force
+        Format-Volume -FileSystem NTFS -AllocationUnitSize 65536 -NewFileSystemLabel $labels[$count] -Confirm:$false -Force
         New-Item -ItemType Directory -Force -Path "$($driveLetter):\Data"
         New-Item -ItemType Directory -Force -Path "$($driveLetter):\Logs"
 
